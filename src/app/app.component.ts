@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   tasks: [];
   private currentListId = 0;
   lists: any;
+
   constructor(private dataSource: DataSourceService) {
   }
 
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit {
       this.updateTasks();
     });
   }
+
   updateTasks() {
     this.dataSource.getTasks(this.currentListId).subscribe((tasks: any) => {
       this.tasks = tasks;
@@ -58,6 +60,12 @@ export class AppComponent implements OnInit {
   deleteList(id) {
     this.dataSource.deleteList(id).subscribe(() => {
       this.updateLists();
+      this.updateTasks();
+    });
+  }
+
+  addTask(taskName) {
+    this.dataSource.addTask({name: taskName, listId: this.currentListId, isDone: false}).subscribe(() => {
       this.updateTasks();
     });
   }

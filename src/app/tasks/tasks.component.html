@@ -2,13 +2,13 @@
   Tasks:
 </div>
 <div id="add-task-wrapper">
-  <input class="task-input" id="task" type="text">
-  <button class="add-btn" (click)="addTask()"> Add task</button>
+  <input class="task-input" id="task" type="text" #name (keyup)="keyUp($event)">
+  <button class="add-btn" (click)="addNewTask(name)"> Add task</button>
 </div>
 <ol>
-  <div *ngFor="let task of tasks; let i = index">
+  <div *ngFor="let task of tasks">
     <li>
-      <app-task  [task]="task" (updateTask)="updateOneTask($event)" (deleteTask)="deleteOneTask($event)"></app-task>
+      <app-task [task]="task" (updateTask)="updateOneTask($event)" (deleteTask)="deleteOneTask($event)"></app-task>
     </li>
   </div>
 

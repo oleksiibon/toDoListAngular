@@ -1,5 +1,4 @@
 import {Component, Input, OnInit, ViewChild, ElementRef, Output, EventEmitter} from '@angular/core';
-import {Task} from '../../Task';
 
 @Component({
   selector: 'app-task',
@@ -19,12 +18,13 @@ export class TaskComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.name =  this.task.name;
+    this.name = this.task.name;
   }
 
-  change() {
+  change(event, name: HTMLInputElement) {
+    event.preventDefault();
     this.isChange = true;
-    // this.changeTask.nativeElement.focus = true;
+    setTimeout(() => name.focus(), 10);
   }
 
   delete() {
@@ -44,5 +44,13 @@ export class TaskComponent implements OnInit {
   doDone() {
     this.task.isDone = !this.task.isDone;
     this.updateTask.emit(this.task);
+  }
+
+  keyup($event: KeyboardEvent) {
+    if ($event.key === 'Escape') {
+      this.back();
+    } else if ($event.key === 'Enter') {
+      this.approveChange();
+    }
   }
 }

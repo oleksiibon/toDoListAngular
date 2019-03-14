@@ -11,8 +11,9 @@ export class ListsComponent implements OnInit {
   @Output() deleteList = new EventEmitter();
   @Input() currentList: number;
   @Input() lists: [];
-  // lists = [{name: 'InCamp', id: 0}, {name: 'College', id: 1}];
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -28,5 +29,11 @@ export class ListsComponent implements OnInit {
 
   deleteOneList(id) {
     this.deleteList.emit(id);
+  }
+
+  keyUp($event: KeyboardEvent) {
+    if ($event.key === 'Enter') {
+      this.addNewList($event.currentTarget as HTMLInputElement);
+    }
   }
 }

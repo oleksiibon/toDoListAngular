@@ -2,9 +2,10 @@
   List:
 </div>
 <div id="add-list-wrapper">
-  <input class="list-input" id="list" type="text" #name>
+  <input class="list-input" id="list" type="text" #name (keyup)="keyUp($event)">
   <button class="add-btn" (click)="addNewList(name)"> Add list</button>
 </div>
-<div *ngFor="let list of lists; let i = index">
-  <app-list  [list]="list" [currentList]="currentList" (changeList)="changeCurrentList($event)"  (deleteList)="deleteOneList($event)"></app-list>
+<div *ngFor="let list of lists">
+  <app-list [list]="list" [currentList]="currentList" (changeList)="changeCurrentList($event)"
+            (deleteList)="deleteOneList($event)"></app-list>
 </div>

@@ -1,16 +1,17 @@
 <tr>
   <td>
-    <app-lists [currentList]="currentListId"
-               [lists]="lists"
+    <app-lists (addList)="addList($event)"
                (changeList)="changeList($event)"
-               (addList)="addList($event)"
-               (deleteList)="deleteList($event)">
+               (deleteList)="deleteList($event)"
+               [currentList]="currentListId"
+               [lists]="lists">
     </app-lists>
   </td>
   <td>
-    <app-tasks [tasks] ="tasks"
+    <app-tasks (addTask)="addTask($event)"
+               (deleteTask)="deleteTask($event)"
                (updateTask)="updateTask($event)"
-               (deleteTask)="deleteTask($event)">
+               [tasks]="tasks">
     </app-tasks>
   </td>
 </tr>

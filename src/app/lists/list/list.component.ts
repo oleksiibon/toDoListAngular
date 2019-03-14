@@ -12,11 +12,14 @@ export class ListComponent implements OnInit, DoCheck {
   @Output() changeList = new EventEmitter();
   @Output() deleteList = new EventEmitter();
   isCurrent: boolean;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
     this.isCurrent = this.currentList === this.list.id;
   }
+
   ngDoCheck() {
     this.isCurrent = this.currentList === this.list.id;
   }

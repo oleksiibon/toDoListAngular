@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  height: 100%;
+  width: 100%;
+}
+span {
+  display: inline-block;
+  width: 300px;
+  cursor: pointer;
+}
+span :hover {
+  border: 1px;
+}
+button {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  margin: 1px;
+}
+input {
+  width: 300px;
+}
+#add-task-wrapper{
+  width:100%;
+}
+
+.add-btn{
+  background: rgb(28, 184, 65);
+}
+.delete-btn {
+  background: indianred;
+}
+.change-btn {
+  background: sandybrown;
+}
+.back-btn {
+  background-color: darkslateblue;
+}
+
+.task-input{
+  width: 300px;
+}
+
+#tasks-box{
+  display: block;
+}
+
+.done {
+  text-decoration: line-through white;
+  background-color: gray;
+}
+#list-box {
+  margin-top: 40px;
+  margin-left: 20px;
+  display: block;
+}
+
+.current-list{
+  background-color: aqua;
+}
+
+

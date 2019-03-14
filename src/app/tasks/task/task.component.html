@@ -1,0 +1,10 @@
+<div [ngStyle]="isChange && {'display': 'none'}">
+  <span (click)="doDone()" [ngClass]="{'done': task.isDone}">{{ task.name }}</span>
+  <button class="change-btn" (click)="change(changeTask)">Change</button>
+  <button class="delete-btn" (click)="delete()">Delete</button>
+</div>
+<div [ngStyle]="!isChange && {'display': 'none'}">
+  <input type="text" #changeTask [(ngModel)]="name" >
+  <button class="add-btn" (click)="approveChange()">OK</button>
+  <button class="back-btn" (click)="back()" >Back</button>
+</div>

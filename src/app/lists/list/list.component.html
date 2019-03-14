@@ -1,0 +1,4 @@
+<div >
+  <span (click)="change()" [ngClass]="{'current-list': isCurrent}">{{ list.name }}</span>
+  <button class="delete-btn" (click)="delete()">Delete</button>
+</div>

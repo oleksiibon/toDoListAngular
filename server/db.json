@@ -1,0 +1,32 @@
+{
+  "lists": [
+    {
+      "id": 0,
+      "name": "InCamp"
+    },
+    {
+      "id": 1,
+      "name": "College"
+    }
+  ],
+  "tasks": [
+    {
+      "name": "Do todolist using angular",
+      "isDone": false,
+      "listId": 0,
+      "id": 0
+    },
+    {
+      "name": "Done",
+      "isDone": false,
+      "listId": 1,
+      "id": 1
+    },
+    {
+      "name": "Done",
+      "isDone": false,
+      "listId": 0,
+      "id": 2
+    }
+  ]
+}

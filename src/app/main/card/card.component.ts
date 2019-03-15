@@ -16,7 +16,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.getTasks(this.list.id).subscribe((data: Array<Task>) => {
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 5; i++) {
         if (data[i] !== undefined) {
           this.tasks.push(data[i]);
         }

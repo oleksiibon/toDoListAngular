@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataSourceService} from '../service/dataSource.service';
 import {List} from '../List';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -9,7 +10,7 @@ import {List} from '../List';
 })
 export class MainComponent implements OnInit {
   lists: Array<List>;
-  constructor(private dataSource: DataSourceService) { }
+  constructor(private dataSource: DataSourceService, private router: Router) { }
 
   ngOnInit() {
     this.dataSource.getLists().subscribe((data: Array<List>) => {
@@ -17,4 +18,7 @@ export class MainComponent implements OnInit {
     });
   }
 
+  goTo(list: List) {
+    this.router.navigate(['/list', list.id]);
+  }
 }

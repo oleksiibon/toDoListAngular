@@ -1,3 +1,5 @@
-<div *ngFor="let list of lists">
-  <app-card [list]="list"></app-card>
+<div class="main-wrapper">
+  <div *ngFor="let list of lists"  class="list-card" (click)="goTo(list)">
+    <app-card [list]="list"></app-card>
+  </div>
 </div>

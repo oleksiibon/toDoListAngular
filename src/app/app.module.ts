@@ -10,11 +10,11 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { CardComponent } from './main/card/card.component';
-import {RouterModule, Routes} from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from '@angular/router';
+import { FullListComponent } from './full-list/full-list.component';
 
-const appRoutes: Routes = [
-  {path: 'main', component: MainComponent}
-]
+
 
 @NgModule({
   declarations: [
@@ -24,13 +24,15 @@ const appRoutes: Routes = [
     ListsComponent,
     ListComponent,
     MainComponent,
-    CardComponent
+    CardComponent,
+    FullListComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule,
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

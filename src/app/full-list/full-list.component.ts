@@ -39,8 +39,9 @@ export class FullListComponent implements OnInit {
 
   updateTasks() {
     this.dataSource.getTasks(this.currentListId).subscribe((tasks: any) => {
+      console.log(tasks);
       this.tasks = tasks;
-    });
+    }, (tasks) => console.log(tasks));
   }
 
   private updateLists() {
@@ -62,13 +63,13 @@ export class FullListComponent implements OnInit {
 
   deleteList(id) {
     this.dataSource.deleteList(id).subscribe(() => {
-      this.updateLists();
-      this.updateTasks();
+      this.router.navigate(['/list', 0]);
     });
   }
 
   addTask(taskName) {
-    this.dataSource.addTask({name: taskName, listId: this.currentListId, isDone: false}).subscribe(() => {
+    console.log(taskName);
+    this.dataSource.addTask({name: taskName.name, listId: this.currentListId, done: false}).subscribe(() => {
       this.updateTasks();
     });
   }

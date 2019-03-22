@@ -18,10 +18,6 @@ export class ListsComponent implements OnInit {
   ngOnInit() {
   }
 
-  addNewList(name: HTMLInputElement) {
-    this.addList.emit({name: name.value});
-    name.value = '';
-  }
 
   changeCurrentList(id: number) {
     this.changeList.emit(id);
@@ -31,9 +27,7 @@ export class ListsComponent implements OnInit {
     this.deleteList.emit(id);
   }
 
-  keyUp($event: KeyboardEvent) {
-    if ($event.key === 'Enter') {
-      this.addNewList($event.currentTarget as HTMLInputElement);
-    }
+  addNewList($event) {
+    this.addList.emit($event);
   }
 }

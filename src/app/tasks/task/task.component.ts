@@ -42,7 +42,7 @@ export class TaskComponent implements OnInit {
   }
 
   doDone() {
-    this.task.isDone = !this.task.isDone;
+    this.task.done = !this.task.done;
     this.updateTask.emit(this.task);
   }
 

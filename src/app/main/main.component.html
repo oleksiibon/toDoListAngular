@@ -1,5 +1,5 @@
 <div class="main-wrapper">
-  <div *ngFor="let list of lists"  class="list-card" (click)="goTo(list)">
-    <app-card [list]="list"></app-card>
+  <div *ngFor="let list of lists"  class="list-card">
+    <app-card [list]="list" (changeCurrentPin)="changePin($event)"></app-card>
   </div>
 </div>

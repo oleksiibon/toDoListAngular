@@ -2,19 +2,13 @@
   "lists": [
     {
       "id": 0,
-      "name": "InCamp"
+      "name": "InCamp",
+      "isPin": false
     },
     {
       "id": 1,
-      "name": "College"
-    },
-    {
-      "name": "Some other list",
-      "id": 2
-    },
-    {
-      "name": "sdfsdfsdd",
-      "id": 3
+      "name": "College",
+      "isPin": true
     }
   ],
   "tasks": [
@@ -32,57 +26,39 @@
     },
     {
       "name": "Add routing for project",
-      "isDone": false,
+      "isDone": true,
       "listId": 0,
       "id": 2
     },
     {
-      "name": "dsdsd",
+      "name": "Some task 1",
       "listId": 0,
-      "isDone": false,
+      "isDone": true,
       "id": 3
     },
     {
-      "name": "dsdsdfsdfgsagfds",
+      "name": "Some task 2",
       "listId": 0,
-      "isDone": false,
+      "isDone": true,
       "id": 4
     },
     {
-      "name": "sff dsfsd hshdfhsf sdfsadf",
+      "name": "Some task 3",
       "listId": 0,
       "isDone": false,
       "id": 5
     },
     {
-      "name": "dsfsdgsd",
-      "listId": 3,
+      "name": "Some task 4",
+      "listId": 0,
       "isDone": false,
       "id": 6
     },
     {
-      "name": "gfsdgfg",
-      "listId": 3,
+      "name": "Some task 5",
+      "listId": 0,
       "isDone": false,
       "id": 7
-    },
-    {
-      "name": "dsfgfdg",
-      "listId": 3,
-      "isDone": false,
-      "id": 8
-    },
-    {
-      "name": "sfgdfsg",
-      "listId": 3,
-      "isDone": false,
-      "id": 9
-    },
-    {
-      "name": "dgsdfg",
-      "listId": 3,
-      "isDone": false,
-      "id": 10
     }
   ]
 }

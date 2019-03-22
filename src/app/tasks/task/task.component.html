@@ -1,5 +1,5 @@
 <div [ngStyle]="isChange && {'display': 'none'}">
-  <span (click)="doDone()" [ngClass]="{'done': task.isDone}">{{ task.name }}</span>
+  <span (click)="doDone()" [ngClass]="{'done': task.done}">{{ task.name }}</span>
   <button class="change-btn" (click)="change($event, nameTask)">Change</button>
   <button class="delete-btn" (click)="delete()">Delete</button>
 </div>

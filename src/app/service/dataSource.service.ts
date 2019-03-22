@@ -8,8 +8,8 @@ import {List} from '../List';
   providedIn: 'root'
 })
 export class DataSourceService {
-  taskUrl = 'http://localhost:3000/tasks';
-  listUrl = 'http://localhost:3000/lists';
+  taskUrl = 'http://localhost:8081/tasks';
+  listUrl = 'http://localhost:8081/lists';
 
   constructor(private  http: HttpClient) {
   }
@@ -18,28 +18,36 @@ export class DataSourceService {
     return this.http.patch(this.taskUrl + '/' + task.id, task);
   }
 
-  deleteTask(task: Task) {
+  deleteTask(task: Task): Observable<object> {
     return this.http.delete(this.taskUrl + '/' + task.id);
   }
 
-  getTasks(listId: number) {
+  getTasks(listId: number): Observable<object> {
     return this.http.get(this.taskUrl + '?listId=' + listId);
   }
 
-  getLists() {
+  getLists(): Observable<object>  {
     return this.http.get(this.listUrl);
   }
 
-  addList(list: List) {
+  addList(list: List): Observable<object>  {
+    list.pin = false;
     return this.http.post(this.listUrl, list);
   }
 
-  deleteList(id: number) {
+  deleteList(id: number): Observable<object>  {
     return this.http.delete(this.listUrl + '/' + id);
   }
 
-  addTask(body) {
+  addTask(body): Observable<object>  {
+    console.log(body);
     return this.http.post(this.taskUrl, body);
   }
+  changePin(id, isPin): Observable<object>  {
+    return this.http.patch(this.listUrl + '/' + id, {pin: isPin});
+  }
 
+  getUnDoneTask(): Observable<object>  {
+    return this.http.get(this.taskUrl + '?isDone=false');
+  }
 }

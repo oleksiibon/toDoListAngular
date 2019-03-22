@@ -1,24 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {DataSourceService} from '../service/dataSource.service';
 import {List} from '../List';
-import {Router} from '@angular/router';
+
+import {Task} from '../Task';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnChanges {
   lists: Array<List>;
-  constructor(private dataSource: DataSourceService, private router: Router) { }
+  tasks: Array<Task>;
+
+  constructor(private dataSource: DataSourceService) {
+  }
 
   ngOnInit() {
+    this.getLists();
+    this.getTasks();
+  }
+  ngOnChanges() {
+    this.getTasks();
+  }
+  getLists() {
     this.dataSource.getLists().subscribe((data: Array<List>) => {
-      this.lists = data;
+      this.lists = data.sort((a, b) => {
+        if (a.pin && !b.pin) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
     });
   }
 
-  goTo(list: List) {
-    this.router.navigate(['/list', list.id]);
+  getTasks() {
+    this.dataSource.getUnDoneTask().subscribe((tasks: Array<Task>) => {
+      this.tasks = tasks;
+    });
+  }
+
+  changePin(data) {
+    this.dataSource.changePin(data.id, data.pin).subscribe(() => {
+      this.getLists();
+    });
   }
 }

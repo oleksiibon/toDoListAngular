@@ -14,59 +14,11 @@ export class AppComponent implements OnInit {
   private currentListId = 0;
   lists: any;
 
-  constructor(private dataSource: DataSourceService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.updateTasks();
-    this.updateLists();
   }
 
-  updateTask($event) {
-    this.dataSource.updateTask($event).subscribe((data: any) => {
-    });
-  }
 
-  deleteTask($event: any) {
-    this.dataSource.deleteTask($event).subscribe(() => {
-      this.updateTasks();
-    });
-  }
-
-  updateTasks() {
-    this.dataSource.getTasks(this.currentListId).subscribe((tasks: any) => {
-      this.tasks = tasks;
-    });
-  }
-
-  private updateLists() {
-    this.dataSource.getLists().subscribe((data) => {
-      this.lists = data;
-    });
-  }
-
-  changeList(id: number) {
-    this.currentListId = id;
-    this.updateTasks();
-  }
-
-  addList(list) {
-    this.dataSource.addList(list).subscribe((data: List) => {
-      this.updateLists();
-      this.changeList(data.id);
-    });
-  }
-
-  deleteList(id) {
-    this.dataSource.deleteList(id).subscribe(() => {
-      this.updateLists();
-      this.updateTasks();
-    });
-  }
-
-  addTask(taskName) {
-    this.dataSource.addTask({name: taskName, listId: this.currentListId, isDone: false}).subscribe(() => {
-      this.updateTasks();
-    });
-  }
 }

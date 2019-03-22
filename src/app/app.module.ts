@@ -13,6 +13,7 @@ import { CardComponent } from './main/card/card.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { FullListComponent } from './full-list/full-list.component';
+import { AddFormComponent } from './add-form/add-form.component';
 
 
 
@@ -25,7 +26,8 @@ import { FullListComponent } from './full-list/full-list.component';
     ListComponent,
     MainComponent,
     CardComponent,
-    FullListComponent
+    FullListComponent,
+    AddFormComponent
   ],
   imports: [
     RouterModule,

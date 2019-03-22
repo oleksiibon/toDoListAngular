@@ -1,9 +1,47 @@
 h3 {
   margin: 0px;
-  width: 290px;
   text-align: center ;
 }
-li {
-  border: 1px solid aqua;
-  margin: 1px;
+button {
+  color: black;
+}
+.bullet {
+  margin-left: 0;
+  list-style: none;
+  counter-reset: li;
+}
+.bullet li {
+  width: 85%;
+  position: relative;
+  margin-bottom: 1.5em;
+  border: 1px solid #CADFCF;
+  padding: 0.6em;
+  border-radius: 4px;
+  background: #FEFEFE;
+  color: #231F20;
+  font-family: "Trebuchet MS", "Lucida Sans";
+}
+.bullet li:before {
+  position: absolute;
+  top: -0.7em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-size: 12px;
+  font-weight: bold;
+  color: #DCC24B;
+  background: #FEFEFE;
+  border-radius: 50%;
+  counter-increment: li;
+  content: counter(li);
+}
+
+.dots {
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.pinned {
+  background-color: red;
 }

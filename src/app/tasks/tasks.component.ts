@@ -18,8 +18,7 @@ export class TasksComponent implements OnInit {
   }
 
   addNewTask(name) {
-    this.addTask.emit(name.value);
-    name.value = '';
+    this.addTask.emit(name);
   }
 
   updateOneTask(event) {

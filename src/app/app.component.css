@@ -2,3 +2,16 @@ td {
   padding: 5px;
   border: 1px solid aqua;
 }
+
+nav {
+  background-color: aqua;
+  display: fLex;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+  font-size: 20px;
+}

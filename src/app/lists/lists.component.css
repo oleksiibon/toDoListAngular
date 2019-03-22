@@ -1,0 +1,42 @@
+h3 {
+  text-align: center;
+}
+#add-task-wrapper {
+  padding-left: 20px;
+}
+.bullet {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+  counter-reset: li;
+}
+.bullet li {
+  position: relative;
+  margin-bottom: 1.5em;
+  border: 1px solid #CADFCF;
+  padding: 0.6em;
+  border-radius: 4px;
+  background: #FEFEFE;
+  color: #231F20;
+  font-family: "Trebuchet MS", "Lucida Sans";
+}
+.bullet li:before {
+  position: absolute;
+  top: -0.7em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-size: 12px;
+  font-weight: bold;
+  color: #DCC24B;
+  background: #FEFEFE;
+  border-radius: 50%;
+  counter-increment: li;
+  content: counter(li);
+}
+
+.bullet li:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  background-color: white;
+}

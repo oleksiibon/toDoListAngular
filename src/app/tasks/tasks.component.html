@@ -1,11 +1,8 @@
-<div>
+<h3 >
   Tasks:
-</div>
-<div id="add-task-wrapper">
-  <input class="task-input" id="task" type="text" #name (keyup)="keyUp($event)">
-  <button class="add-btn" (click)="addNewTask(name)"> Add task</button>
-</div>
-<ol>
+</h3>
+<app-add-form (add)="addNewTask($event)"></app-add-form>
+<ol class="bullet">
   <div *ngFor="let task of tasks">
     <li>
       <app-task [task]="task" (updateTask)="updateOneTask($event)" (deleteTask)="deleteOneTask($event)"></app-task>

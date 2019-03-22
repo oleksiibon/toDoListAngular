@@ -19,6 +19,7 @@ button {
   border-radius: 4px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   margin: 1px;
+  cursor: pointer;
 }
 
 input {
@@ -55,7 +56,6 @@ input {
 
 .done {
   text-decoration: line-through white;
-  background-color: gray;
 }
 
 #list-box {

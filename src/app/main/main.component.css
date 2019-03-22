@@ -1,13 +1,19 @@
 .list-card {
   border: 1px solid aqua;
-  width: 270px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   margin: 10px;
   cursor: pointer;
+  overflow: hidden;
 
 }
 .list-card:hover {
-  opacity: 0.6;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: 0.1s;
+  opacity: 1;
+  background-color: white;
 }
 .main-wrapper {
   width: 880px;
@@ -15,4 +21,9 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: auto;
+  margin-top: 50px;
+}
+
+.pinned {
+  background-color: red;
 }

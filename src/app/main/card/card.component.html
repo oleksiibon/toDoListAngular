@@ -1,6 +1,12 @@
-<h3>
-  {{ list.name }}
-</h3>
-<ul>
-  <li *ngFor="let task of tasks">{{ task.name }}</li>
-</ul>
+<button (click)="changePin()" [ngClass]="{'pinned': list.pin}"> {{ pin }}</button>
+<div  (click)="goTo(list)">
+  <h3>
+    {{ list.name }}
+  </h3>
+  <ol class="bullet">
+    <li *ngFor="let task of tasks">{{ task.name }}</li>
+  </ol>
+  <p class="dots">
+    {{ cardFooter }}
+  </p>
+</div>

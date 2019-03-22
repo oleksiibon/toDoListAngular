@@ -1,0 +1,14 @@
+.main-wrapper{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.list-box{
+  margin-right: 40px;
+}
+
+.task-box {
+  margin-left: 40px;
+}
